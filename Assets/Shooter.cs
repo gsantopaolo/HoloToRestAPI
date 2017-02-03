@@ -33,7 +33,7 @@ public class Shooter : MonoBehaviour
         
         using (var client = new WebClient())
         {
-            string query = string.Format("http://myrestapy/param1{0}param2{1}", "myfirstparam", "mysecondparam");
+            string query = string.Format("http://myrestapy/head{0}/gaze{1}", headPosition.ToString(), gazeDirection.ToString());
             string rawResult = client.DownloadString(query);
             MyTypedJsonObject myTypedObg = JsonUtility.FromJson<MyTypedJsonObject>(rawResult);
         }
